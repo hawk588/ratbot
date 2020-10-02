@@ -14,9 +14,14 @@ client.on('ready', () => {
 
 client.on('message', message => {
 
+    if (message.author == client.user)
+    {
+        return
+    }    
+    
     if (needsCorrecting(message.content)) {
 
-       //message.reply("I think you meant to say \"" + Corrector(message.content) + "\"");
+       message.reply("I think you meant to say \"" + Corrector(message.content) + "\"");
 
        }
 

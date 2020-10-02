@@ -90,4 +90,4 @@ function Corrector(message)
 
 // THIS  MUST  BE  THIS  WAY
 
-client.login(NzYxNjI5MTY4MTE0MzM1NzY1.X3dYcA.u4AZiWcp9VQpzQXNkRUEoH_kIQc);//BOT_TOKEN is the Client Secret
+client.login(process.env.BOT_TOKEN);//BOT_TOKEN is the Client Secret

@@ -16,7 +16,7 @@ client.on('message', message => {
 
     if (needsCorrecting(message.content)) {
 
-       message.reply(Corrector(message.content));
+       message.reply("I think you meant to say \"" + Corrector(message.content) + "\"");
 
        }
 

@@ -1,10 +1,10 @@
 {
 
-  "name": "Ikit Claw",
+  "name": "ratbot",
 
-  "description": "Perfect Autocorrect",
+  "description": "Example",
 
-  "version": "0.1.0",
+  "version": "0.0.0",
 
   "main": "bot.js",
 

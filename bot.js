@@ -14,7 +14,7 @@ client.on('ready', () => {
 
 client.on('message', message => {
 
-    if (needsCorrecting(message.content)) {
+    if (message.content === 'ping') {
 
        message.reply('pong');
 
@@ -22,70 +22,6 @@ client.on('message', message => {
 
 });
 
-function needsCorrecting(message)
-{
-    let count = 0;
-    for(let i = 0; i < message.length; i++)
-    {
-        if(message.charAt(i) == ' ' && count == 3)
-        {
-            return true;
-        }
-        else if(message.charAt(i) == ' ')
-        {
-            count = 0;
-        }
-        else
-        {
-            count += 1;
-        }
-    } 
-    if (count == 3)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-
-function Corrector(message)
-{
-    let count = 0;
-    let word = "";
-    let finalMessage = "";
-    for(let i = 0; i < message.length; i++)
-    {
-        if(message.charAt(i) == ' ' && count == 3)
-        {
-            count = 0;
-            finalMessage += "rat ";
-            word = "";
-        }
-        else if(message.charAt(i) == ' ')
-        {
-            count = 0;
-            finalMessage += word;
-            finalMessage += ' ';
-            word = "";
-        }
-        else
-        {
-            count += 1;
-            word += message.charAt(i);
-        }
-    }
-    if(count == 3)
-    {
-        finalMessage += "rat";
-    }
-    else
-    {
-        finalMessage += word;
-    }
-    return finalMessage
-}
  
 
 // THIS  MUST  BE  THIS  WAY

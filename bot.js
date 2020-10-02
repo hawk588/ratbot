@@ -16,7 +16,7 @@ client.on('message', message => {
 
     if (needsCorrecting(message.content)) {
 
-       message.reply('pong');
+       message.reply(Corrector(message.content));
 
        }
 

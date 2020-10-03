@@ -30,34 +30,49 @@ client.on('message', message => {
 
        }
 
+    
+
 });
 
 function needsCorrecting(message)
 {
+    message = message.toLowerCase();
     let count = 0;
+    let word = "";
     for(let i = 0; i < message.length; i++)
     {
         if(message.charAt(i) == ' ' && count == 3)
         {
-            return true;
+            if(word != "rat")
+            {
+                return true;
+            }
+            else
+            {
+                word = "";
+            }    
         }
         else if(message.charAt(i) == ' ')
         {
             count = 0;
+            word = "";
         }
         else
         {
             count += 1;
+            word += message.charAt(i);
         }
     } 
-    if (count == 3)
+    if (count == 3 && word != "rat")
     {
         return true;
     }
     else
     {
         return false;
+        
     }
+    
 }
 
 function Corrector(message)
@@ -67,6 +82,7 @@ function Corrector(message)
     let finalMessage = "";
     let ratted = false;
     let notRatted = false;
+    let needsCorrecting = true;
     for(let i = 0; i < message.length; i++)
     {
         if(message.charAt(i) == ' ' && count == 3)

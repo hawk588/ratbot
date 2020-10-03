@@ -66,14 +66,14 @@ function Corrector(message)
     let word = "";
     let finalMessage = "";
     let ratted = false;
-    let notRatted = true;
+    let notRatted = false;
     for(let i = 0; i < message.length; i++)
     {
         if(message.charAt(i) == ' ' && count == 3)
         {
             count = 0;
             finalMessage += "rat ";
-            if(word == "rat" && notRatted == false)
+            if(word == "rat")
             {
                 ratted = true;
             }

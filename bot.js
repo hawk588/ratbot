@@ -96,6 +96,14 @@ function Corrector(message)
             word += message.charAt(i);
         }
     }
+    if(word == "rat")
+    {
+        ratted = true;
+    }
+    if(word != "rat")
+    {
+        notRatted = true;
+    }
     if(ratted && !notRatted)
     {
         finalMessage = "Yes yes! Keep saying rat rat!"

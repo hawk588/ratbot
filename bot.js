@@ -18,6 +18,11 @@ client.on('message', message => {
     {
         return
     }    
+
+    if (message.author.bot)
+    {
+        return
+    }
     
     if (needsCorrecting(message.content)) {
 

@@ -65,12 +65,22 @@ function Corrector(message)
     let count = 0;
     let word = "";
     let finalMessage = "";
+    let ratted = false;
+    let notRatted = true;
     for(let i = 0; i < message.length; i++)
     {
         if(message.charAt(i) == ' ' && count == 3)
         {
             count = 0;
             finalMessage += "rat ";
+            if(word == "rat" && notRatted == false)
+            {
+                ratted = true;
+            }
+            if(word != "rat")
+            {
+                notRatted = true;
+            }
             word = "";
         }
         else if(message.charAt(i) == ' ')
@@ -86,7 +96,11 @@ function Corrector(message)
             word += message.charAt(i);
         }
     }
-    if(count == 3)
+    if(ratted && !notRatted)
+    {
+        finalMessage = "Yes yes! Keep saying rat rat!"
+    }
+    else if(count == 3)
     {
         finalMessage += "rat";
     }

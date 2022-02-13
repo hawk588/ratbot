@@ -5,6 +5,10 @@
   "description": "best autocorrect",
 
   "version": "0.0.0",
+  
+  "engines": {
+    "node": "16.x"
+  }
 
   "main": "bot.js",
 

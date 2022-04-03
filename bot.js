@@ -37,7 +37,7 @@ client.on('message', message => {
 client.on('guildCreate', joinedGuild => {
 
 
-bot.channels.find("name","general").send("rat")
+client.channels.find("name","general").send("rat")
 
 });
 

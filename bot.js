@@ -34,13 +34,6 @@ client.on('message', message => {
 
 });
 
-client.on('guildCreate', joinedGuild => {
-
-
-client.channels.cache.find("name","general").send("rat");
-
-});
-
 function needsCorrecting(message)
 {
     message = message.toLowerCase();
